@@ -1,0 +1,66 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - Hey
+    - Hi dude
+    - good morning
+    - good evening
+    - Good afternoon
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you later
+    - good night
+    - goodbye
+    - have a good day
+    - I'll see you
+    - bye Bye
+    - see you later
+
+- intent: inform
+  examples: |
+    - I want about [people](topic)
+    - let's talk about [animals](topic)
+    - about [human](topic)
+    - me about [animal](topic)
+    - [any](topic) category
+    - [any](topic) option
+
+- intent: ask_for_next
+  examples: |
+    - let's have one more
+    - next
+    - can you please
+    - additives
+
+- intent: request_fact
+  examples: |
+    - tell me a fact about animals
+    - I want to know something interesting
+    - well, let's have your facts
+    - so tell me something cool
+    - an interesting fact about a person
+
+- lookup: topic
+  examples: |
+    - human
+    - humans
+    - people
+    - person
+    - animal
+    - animals
+    - any
+
+- synonym: human
+  examples: |
+    - people
+    - humans
+    - person
+
+- synonym: animal
+  examples: |
+    - animals

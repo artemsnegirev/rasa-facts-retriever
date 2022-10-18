@@ -1,0 +1,36 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Activate form
+  steps:
+  - intent: request_fact
+  - action: fact_form
+  - active_loop: fact_form
+
+- rule: Handle next one
+  steps:
+  - action: action_retrieve_fact
+  - intent: ask_for_next
+  - action: utter_good_feedback
+  - action: fact_form
+  - active_loop: fact_form
+
+- rule: Submit form
+  condition:
+  - active_loop: fact_form
+  steps:
+  - action: fact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_retrieve_fact

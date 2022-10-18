@@ -1,0 +1,47 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - inform
+  - ask_for_next
+  - request_fact
+
+entities:
+  - topic
+
+actions:
+  - action_retrieve_fact
+
+slots:
+  topic:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: topic
+
+forms:
+  fact_form:
+    required_slots:
+        - topic
+
+responses:
+  utter_greet:
+  - text: "Hello!"
+
+  utter_good_feedback:
+  - text: "Ohh, you are so curious"
+
+  utter_goodbye:
+  - text: "See you"
+
+  utter_ask_topic:
+  - text: "Enter the topic: human or animal"
+
+  utter_iamabot:
+  - text: "I am bot that tells intresting facts"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -8,13 +8,19 @@ This bot is an example of task-oriented bot that developed with Rasa framework. 
 
 It was developed for python 3.8.5
 
-1. create venv (ubuntu)
+1. create and activate venv
 ```bash
+# create
 python -m venv venv
+
+# if you use Ubuntu (or similar)
 source venv/bin/activate 
+
+# if you use Windows
+venv\Scripts\activate.bat
 ```
 
-2. install dependecies
+2. install dependencies
 ```bash
 pip install -r requirements.txt
 ```
